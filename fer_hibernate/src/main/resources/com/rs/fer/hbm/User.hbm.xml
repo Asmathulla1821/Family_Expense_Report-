@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.rs.fer.bean.User" table="user_hbm">
+
+		<id name="id" column="user_id">
+			<generator class="identity" />
+		</id>
+
+		<property name="firstName" />
+		
+		<property name="middleName" />
+		
+		<property name="lastName" />
+		
+		<property name="email" />
+		
+		<property name="userName" />
+		
+		<property name="password" />
+		
+		<property name="mobile" />
+		
+		<!-- one to one mapping start -->
+		<one-to-one name="address" class="com.rs.fer.bean.Address" cascade="all" />
+		<!-- one to one mapping end-->
+		
+		<!-- one to many mapping start-->
+		<set name="expenses" cascade="all">
+		
+			<!-- To declare foreign key column -->
+			<key column="uid" />
+			
+			<one-to-many class="com.rs.fer.bean.Expense" />		
+		</set>
+				
+		<!-- one to many mapping end-->
+
+	</class>
+
+</hibernate-mapping>
+	
