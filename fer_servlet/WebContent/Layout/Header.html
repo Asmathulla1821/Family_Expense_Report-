@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Dashboard.html</title>
+
+<script>
+	function submitForm(path) {
+
+		// get the form object
+		var form = document.DashboardForm;
+
+		// Load the path into form object
+		form.action = path;
+
+		// Submit the form object
+		form.submit();
+
+	}
+</script>
+</head>
+
+<body>
+	<form name='DashboardForm' method='post'>
+		<table align="center" border="2" height="550px" width="800px">
+			<tr height="100px">
+				<td align="center" colspan="2">Family Expense Report
+					&nbsp;&nbsp;&nbsp;&nbsp; User:
